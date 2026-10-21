@@ -25,6 +25,13 @@ def test_divide_by_zero():
         divide(1, 0)
 
 
+def test_divide_with_invalid_type():
+    with pytest.raises(TypeError):
+        divide("10", 2)
+    with pytest.raises(TypeError):
+        divide(True, 2)
+
+
 def test_power():
     assert power(2, 3) == 8
     assert power(5, 0) == 1

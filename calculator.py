@@ -14,6 +14,8 @@ def multiply(a, b):
 
 
 def divide(a, b):
+    if isinstance(a, bool) or isinstance(b, bool) or not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("除法仅支持数值类型")
     if b == 0:
         raise ZeroDivisionError("除数不能为 0")
     return a / b
