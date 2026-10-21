@@ -1,6 +1,6 @@
 import pytest
 
-from calculator import add, subtract, multiply, divide, power
+from calculator import add, subtract, multiply, divide, power, mean
 
 
 def test_add():
@@ -29,3 +29,13 @@ def test_power():
     assert power(2, 3) == 8
     assert power(5, 0) == 1
     assert power(4, 0.5) == 2
+
+
+def test_mean():
+    assert mean([1, 2, 3, 4]) == 2.5
+    assert mean([10]) == 10
+
+
+def test_mean_empty_list():
+    with pytest.raises(ValueError):
+        mean([])
