@@ -21,3 +21,9 @@ def divide(a, b):
 
 def power(a, b):
     return a ** b
+
+
+def mean(numbers):
+    if not numbers:
+        raise ValueError("数据列表不能为空")
+    return sum(numbers) / len(numbers)
